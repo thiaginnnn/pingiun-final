@@ -1,20 +1,19 @@
-
-body { 
-  display: flex; 
+body {
+  display: flex;
   flex-direction: column;
-  min-height: 100vh; 
-  background-color: #ffffff; 
+  min-height: 100vh;
+  background-color: #ffffff;
   color: #000000;
   font-family: sans-serif;
 }
 
-.cabecalho { 
-  display: flex; 
-  justify-content: space-between; 
-  align-items: center; 
-  padding: 15px 25px; 
+.cabecalho {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 25px;
   background-color: rgba(0, 0, 0, 0.2);
-} 
+}
 
 .cabecalho-link {
   color: #fff;
@@ -29,11 +28,13 @@ main {
   gap: 20px;
 }
 
-section { 
-  display: flex; 
-  gap: 16px; 
+section {
+  display: flex;
+  gap: 16px;
   perspective: 1000px;
-}       
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
 .cartao {
   width: 250px;
@@ -41,25 +42,25 @@ section {
   background-color: transparent;
 }
 
-.cartao-interno { 
-  position: relative; 
+.cartao-interno {
+  position: relative;
   width: 100%;
   height: 100%;
-  transition: transform 0.8s; 
-  transform-style: preserve-3d; 
-} 
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
 
-.cartao:hover .cartao-interno { 
-  transform: rotateY(180deg); 
-} 
+.cartao:hover .cartao-interno {
+  transform: rotateY(180deg);
+}
 
-
-.cartao-frente, .cartao-verso { 
-  position: absolute; 
+.cartao-frente,
+.cartao-verso {
+  position: absolute;
   width: 100%;
   height: auto;
-  border-radius: 12px; 
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); 
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
   backface-visibility: hidden;
   background-color: #f5f2f2;
   color: #333;
@@ -69,7 +70,8 @@ section {
   align-items: center;
   justify-content: space-between;
   text-align: center;
-} 
+  box-sizing: border-box;
+}
 
 .cartao-verso {
   transform: rotateY(180deg);
@@ -78,13 +80,24 @@ section {
   line-height: 20px;
   font-size: 15px;
   position: absolute;
-} 
+}
 
 .cartao-imagem {
   width: 100%;
   height: 70%;
   object-fit: cover;
   border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 64px;
+}
+
+@media (max-width: 820px) {
+  section {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 footer {
